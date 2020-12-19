@@ -2809,6 +2809,7 @@ BEGIN;
 						sp.login_name,
 						sp.program_name,
 						s.host_process_id,
+						CAST(s.context_info as varchar(128)) as ci,
 						COALESCE(r.text_size, s.text_size) AS text_size,
 						COALESCE(r.language, s.language) AS language,
 						COALESCE(r.date_format, s.date_format) AS date_format,
